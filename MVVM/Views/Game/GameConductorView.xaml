@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="CEOS.MVVM.Views.Game.GameConductorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CEOS.MVVM.Views.Game"
+             mc:Ignorable="d" 
+             d:DesignHeight="670" d:DesignWidth="1220">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="CEO symulator"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="Gold"
+                   FontSize="28"
+                   FontWeight="Bold"/> 
+        <TextBlock Grid.Row="1" Grid.Column="3" x:Name="CompanyName"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Foreground="Gold"
+                   FontSize="24"
+                   FontWeight="Bold"/>
+
+
+        <!-- Left panel Buttons-->
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="1">
+            <RadioButton x:Name="LoadHomeView" Height="50" FontSize="16"
+                     Style="{StaticResource MenuRadioButtonTheme}">
+                Widok główny
+            </RadioButton>
+            <RadioButton x:Name="LoadWorkersView" Height="50" FontSize="16"
+                         Style="{StaticResource MenuRadioButtonTheme}">
+                Widok pracowników
+            </RadioButton>
+            <RadioButton x:Name="LoadStorageView" Height="50" FontSize="16"
+                         Style="{StaticResource MenuRadioButtonTheme}">
+                Widok magazynu
+            </RadioButton>
+            <RadioButton x:Name="LoadMarketsView" Height="50" FontSize="16"
+                         Style="{StaticResource MenuRadioButtonTheme}">
+                Widok rynku
+            </RadioButton>
+        </StackPanel>
+
+
+        <!--View Dock-->
+        <ContentControl Grid.Row="2" Grid.Column="2" 
+                        Grid.ColumnSpan="2" Grid.RowSpan="2"
+                        x:Name="ActiveItem"/>
+
+        <!--Turn & Save button-->
+        <StackPanel Grid.Row ="3" Grid.Column="1"  Height="100" VerticalAlignment="Center">
+            <Button x:Name="Turn" FontSize="16" Height="50"
+                    Style="{StaticResource ResourceKey=MenuButtonTheme}" Content="Następna Tura"/>
+            <Button x:Name="Save" Height="20" Margin="0 30 0 0" FontSize="14"
+                    Style="{StaticResource ResourceKey=MenuButtonTheme}" Content="Zapisz"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
